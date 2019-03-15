@@ -2,18 +2,25 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>归档: 2018 - 静思一得</title>
+<title>Toast的基本用法 - 静思一得</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="静思一得">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+    <meta name="description" content="Toast是Android系统提供的一种提醒方式，它可以将一些短信息在Activity上通知用户，过段时间后会自动消失，并且不会占用屏幕空间。">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Toast的基本用法">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/Toast的基本用法/index.html">
 <meta property="og:site_name" content="静思一得">
+<meta property="og:description" content="Toast是Android系统提供的一种提醒方式，它可以将一些短信息在Activity上通知用户，过段时间后会自动消失，并且不会占用屏幕空间。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/gallery/toast.png">
+<meta property="og:updated_time" content="2019-03-15T03:19:19.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="静思一得">
+<meta name="twitter:title" content="Toast的基本用法">
+<meta name="twitter:description" content="Toast是Android系统提供的一种提醒方式，它可以将一些短信息在Activity上通知用户，过段时间后会自动消失，并且不会占用屏幕空间。">
+<meta name="twitter:image" content="http://yoursite.com/gallery/toast.png">
 
 
 
@@ -83,7 +90,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="静思一得" height="28">
+                <img src="/images/logo.svg" alt="Toast的基本用法" height="28">
             
             </a>
         </div>
@@ -128,64 +135,143 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/toast.png" alt="Toast的基本用法">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-14T16:00:00.000Z">2019-03-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/移动开发/">移动开发</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 236 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Toast的基本用法
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>Toast是Android系统提供的一种提醒方式，它可以将一些短信息在Activity上通知用户，过段时间后会自动消失，并且不会占用屏幕空间。</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>首先需要定义一个弹出Toast的触发点，在Acivity中添加一个Button按钮用于触发Toast的提示框。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Override</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_main);</span><br><span class="line">    <span class="hljs-comment">//获取布局文件的元素</span></span><br><span class="line">    Button button1 = findViewById(R.id.button_1);</span><br><span class="line">    <span class="hljs-comment">//为button1添加点击事件</span></span><br><span class="line">    button1.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>&#123;</span><br><span class="line">            <span class="hljs-comment">//创建Toast对象调用静态方法makeText()传递参数</span></span><br><span class="line">            Toast.makeText(MainActivity.<span class="hljs-keyword">this</span>,<span class="hljs-string">"Toast提示"</span>,Toast.LENGTH_LONG).show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Toast.makeText()需要传递3个参数</p>
+<ol>
+<li>Toast上下文对象，传递Activity本身即可</li>
+<li>字符串数据，用于显示内容</li>
+<li>Toast的显示时长，有两个常量可以设置可以选择LENGTH_LONG和LENGTH_SHORT。</li>
+</ol>
+<h4 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h4><p><img src="/gallery/toast.png" width="600px" height="100%"></p>
 
-<div class="card widget">
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Android/">Android</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2018
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
                 
-                <a href="/2018/04/14/java/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/thumbnails/banner.jpg" alt="Java小案例-杨辉三角算法">
-                    </p>
-                </a>
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-04-14T08:10:25.000Z">2018-04-14</time>
-                        <a href="/2018/04/14/java/" class="has-link-black-ter is-size-6">Java小案例-杨辉三角算法</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/编程语言/">编程语言</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2018-03-11T15:02:53.000Z">2018-03-11</time>
-                        <a href="/2018/03/11/测试文章1/" class="has-link-black-ter is-size-6">测试文章1</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/软件资源/">软件资源</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.png" alt="微信"></div>
+</a>
+
+                
         </div>
     </div>
 </div>
 
 
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/04/14/java/">
+                <span class="level-item">Java小案例-杨辉三角算法</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'cPNchi880q4jN5npHvBLGx2i-gzGzoHsz',
+        app_key: 'jKErYCokFYyYllaC6BVA4HFm',
+        placeholder: 'Valine Comment'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -755,7 +841,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="静思一得" height="28">
+                    <img src="/images/logo.svg" alt="Toast的基本用法" height="28">
                 
                 </a>
                 <p class="is-size-7">
