@@ -2,25 +2,25 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Java小案例-杨辉三角算法 - 静思一得</title>
+<title>Android全局大喇叭-广播机制 - 静思一得</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Code">
-<meta name="keywords" content="Java">
+    <meta name="description" content="广播分类 1.标准广播    一种异步执行的广播，在广播发出之后，所有的广播接收器都会在同一时刻接收到这条广播消息，这种广播效率会更高，但也意味着它无法被截断。">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java小案例-杨辉三角算法">
-<meta property="og:url" content="http://yoursite.com/2018/04/14/java/index.html">
+<meta property="og:title" content="Android全局大喇叭-广播机制">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/广播机制/index.html">
 <meta property="og:site_name" content="静思一得">
-<meta property="og:description" content="Code">
+<meta property="og:description" content="广播分类 1.标准广播    一种异步执行的广播，在广播发出之后，所有的广播接收器都会在同一时刻接收到这条广播消息，这种广播效率会更高，但也意味着它无法被截断。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/gallery/banner.jpg">
-<meta property="og:updated_time" content="2019-03-15T03:19:53.875Z">
+<meta property="og:image" content="http://yoursite.com/gallery⁩/android_guangbo/guangbo1.png">
+<meta property="og:updated_time" content="2019-03-21T10:43:52.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java小案例-杨辉三角算法">
-<meta name="twitter:description" content="Code">
-<meta name="twitter:image" content="http://yoursite.com/gallery/banner.jpg">
+<meta name="twitter:title" content="Android全局大喇叭-广播机制">
+<meta name="twitter:description" content="广播分类 1.标准广播    一种异步执行的广播，在广播发出之后，所有的广播接收器都会在同一时刻接收到这条广播消息，这种广播效率会更高，但也意味着它无法被截断。">
+<meta name="twitter:image" content="http://yoursite.com/gallery⁩/android_guangbo/guangbo1.png">
 
 
 
@@ -90,7 +90,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Java小案例-杨辉三角算法" height="28">
+                <img src="/images/logo.svg" alt="Android全局大喇叭-广播机制" height="28">
             
             </a>
         </div>
@@ -139,7 +139,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/thumbnails/banner.jpg" alt="Java小案例-杨辉三角算法">
+            <img class="thumbnail" src="/gallery⁩/thumbnails⁩/android_guangbo_thumbnails/guangbo.jpg" alt="Android全局大喇叭-广播机制">
         </span>
     </div>
     
@@ -147,17 +147,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-04-14T08:10:25.000Z">2018-04-14</time>
+                <time class="level-item has-text-grey" datetime="2019-03-20T16:00:00.000Z">2019-03-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/编程语言/">编程语言</a>
+                <a class="has-link-grey -link" href="/categories/移动开发/">移动开发</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 232 个字)
+                    6 分钟 读完 (大约 902 个字)
                 </span>
                 
             </div>
@@ -165,13 +165,30 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Java小案例-杨辉三角算法
+                Android全局大喇叭-广播机制
             
         </h1>
         <div class="content">
-            <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><a id="more"></a>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/** </span></span><br><span class="line"><span class="hljs-comment"> * 要求：输出杨辉三角 </span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> Administration </span></span><br><span class="line"><span class="hljs-comment"> * </span></span><br><span class="line"><span class="hljs-comment"> */</span>  </span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YangHuiTest</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;  </span><br><span class="line">        <span class="hljs-comment">//创建二维数组，定义了行，没有定义列  </span></span><br><span class="line">        <span class="hljs-keyword">int</span>[][] arr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">10</span>][];  </span><br><span class="line">        <span class="hljs-comment">//动态为列开辟空间(杨辉三角每行的列数和当前行号是相同的，如：第5行有5列)  </span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;  </span><br><span class="line">            arr[i] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[i+<span class="hljs-number">1</span>];  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="hljs-comment">//赋值操作  </span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;  </span><br><span class="line">            arr[i][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<span class="hljs-comment">//第i行第1列，即每行的第一列都是1  </span></span><br><span class="line">            arr[i][i] = <span class="hljs-number">1</span>;<span class="hljs-comment">//第i行的第i列，即每行的最后一个数都是1  </span></span><br><span class="line">            <span class="hljs-comment">//接下来是杨辉三角的核心部分  </span></span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//注意这里的j需要从1开始算起，因为每一行的第一个数我们已经给赋值了  </span></span><br><span class="line">                <span class="hljs-comment">//当前数值--&gt;上一行该列的数+上一行该列的左边的第一个数（看图）  </span></span><br><span class="line">                arr[i][j]=arr[i-<span class="hljs-number">1</span>][j]+arr[i-<span class="hljs-number">1</span>][j-<span class="hljs-number">1</span>];  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="hljs-comment">//打印输出  </span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++) &#123;  </span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; arr[i].length; j++) &#123;  </span><br><span class="line">                System.out.print(arr[i][j]+<span class="hljs-string">"\t"</span>);　　<span class="hljs-comment">//不必换行  </span></span><br><span class="line">            &#125;  </span><br><span class="line">            System.out.println();　　<span class="hljs-comment">//换行  </span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><p><img src="/gallery/banner.jpg" width="600px" height="100%"></p>
+            <h2 id="广播分类"><a href="#广播分类" class="headerlink" title="广播分类"></a>广播分类</h2><blockquote>
+<p>1.标准广播<br>    一种异步执行的广播，在广播发出之后，所有的广播接收器都会在同一时刻接收到这条广播消息，这种广播效率会更高，但也意味着它无法被截断。<br><a id="more"></a><br>2.有序广播<br>    一种同步执行的广播，在广播发出之后同一时刻只会有一个广播接收器收到这条广播消息，当这个广播接收器逻辑执行完毕之后，广播才会继续传递。广播是有先后顺序的，优先级越高的接收器会先接收到，并且可以对广播进行截断。</p>
+</blockquote>
+<h2 id="接收系统广播"><a href="#接收系统广播" class="headerlink" title="接收系统广播"></a>接收系统广播</h2><p>Android内容了很多系统广播，我们可以在应用程序中通过广播接收器来得到各种系统的状态信息，例如当手机完全开机后、电池电量过低时、时间或区域发生变化时系统都会发送广播信息。</p>
+<h2 id="如何注册广播"><a href="#如何注册广播" class="headerlink" title="如何注册广播"></a>如何注册广播</h2><p>注册广播接收器有两种方式，一种是在代码中动态注册，一种是在AndroidManifest.xml中静态注册。</p>
+<ol>
+<li>动态注册广播-实现监听网络状态<figure class="highlight java hljs"><figcaption><span>[MainActivity.java]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">//创建意图过滤器对象</span></span><br><span class="line">    <span class="hljs-keyword">private</span> IntentFilter intentFilter;</span><br><span class="line">    <span class="hljs-comment">//创建广播接收器对象</span></span><br><span class="line">    <span class="hljs-keyword">private</span> NetworkChangeReceiver networkChangeReceiver;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        intentFilter = <span class="hljs-keyword">new</span> IntentFilter();</span><br><span class="line">        <span class="hljs-comment">//当网络状态发生变化时，系统会发出android.net.conn.CONNECTIVITY_CHANGE的广播</span></span><br><span class="line">        intentFilter.addAction(<span class="hljs-string">"android.net.conn.CONNECTIVITY_CHANGE"</span>);</span><br><span class="line">        networkChangeReceiver = <span class="hljs-keyword">new</span> NetworkChangeReceiver();</span><br><span class="line">        <span class="hljs-comment">//注册广播接收器传递参数</span></span><br><span class="line">        registerReceiver(networkChangeReceiver, intentFilter);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">//动态注册广播接收器最后都需要取消注册</span></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDestroy</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">super</span>.onDestroy();</span><br><span class="line">        <span class="hljs-comment">//通过此方法取消注册</span></span><br><span class="line">        unregisterReceiver(networkChangeReceiver);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">//定义内部类 用于接收监听网络状态发生变化的广播</span></span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NetworkChangeReceiver</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">//当网络状态发生变化时执行的方法</span></span><br><span class="line">        <span class="hljs-meta">@Override</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onReceive</span><span class="hljs-params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">            Toast.makeText(context, <span class="hljs-string">"network changes"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面当网络状态的变化时通过Toast进行提示。<br>动态注册广播接收器可以自由的控制注册和注销，但它缺点就是只有当页面正常启动后才能够接收到广播消息，所以注册程序都写在onCreate()方法中。</p>
+<ol start="2">
+<li>静态注册广播-实现开机启动</li>
+</ol>
+<p>前面说了动态注册广播需要页面正常启动后才会接收广播消息，那么静态注册就可以让程序在未启动的情况下也能接收广播消息。</p>
+<p>让程序接收开机广播，可以使用AndroidStudio提供的快捷方式来创建广播接收器，右击包名→New→Other→Broadcast Receiver会弹出如下图窗口。</p>
+<p><img src="/gallery⁩/android_guangbo/guangbo1.png" width="600px"></p>
+<p>Exported属性表示是否允许广播接收器接收本程序以外的广播<br><br>Enabled属性表示是否启用这个广播接收器<br><br>勾选这两个属性点击Finish完成创建</p>
+<figure class="highlight java hljs"><figcaption><span>[BootCompleteReceiver.java]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BootCompleteReceiver</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-meta">@Override</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onReceive</span><span class="hljs-params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">        Toast.makeText(context, <span class="hljs-string">"广播接收器静态注册"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在刚刚创建的接收器中修改代码如上，另外如果想接收开机广播还需要在AndroidManifest.xml中添加系统权限,可以看到AndroidStudio自动帮我们创建了receiver标签在里面添加action。监听系统开机广播也需要添加uses-permission声明权限。</p>
+<figure class="highlight xml hljs"><figcaption><span>[AndroidManifest.xml]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">manifest</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="hljs-tag">    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="hljs-tag">    <span class="hljs-attr">package</span>=<span class="hljs-string">"com.example.admin.broadcasttest"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!--声明权限--&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.permission.RECEIVE_BOOT_COMPLETED"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">application</span></span></span><br><span class="line"><span class="hljs-tag">        <span class="hljs-attr">...</span></span></span><br><span class="line">        &lt;receiver</span><br><span class="line">            android:name=".BootCompleteReceiver"</span><br><span class="line">            android:enabled="true"</span><br><span class="line">            android:exported="true"&gt;</span><br><span class="line">            <span class="hljs-comment">&lt;!--声明权限--&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.intent.action.BOOT_COMPLETED"</span>/&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">receiver</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -179,7 +196,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/">Java</a>
+                    <a class="has-link-grey -link" href="/tags/Android/">Android</a>
                 </div>
             </div>
         </div>
@@ -229,17 +246,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/15/Toast的基本用法/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Toast的基本用法</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/03/11/测试文章1/">
-                <span class="level-item">测试文章1</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/15/Toast的基本用法/">
+                <span class="level-item">Toast的基本用法</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -312,7 +322,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        2
                     </p>
                 </div>
             </div>
@@ -322,7 +332,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        1
                     </p>
                 </div>
             </div>
@@ -332,7 +342,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        1
                     </p>
                 </div>
             </div>
@@ -418,23 +428,7 @@
                 <span class="level-item">移动开发</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/编程语言/">
-            <span class="level-start">
-                <span class="level-item">编程语言</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/软件资源/">
-            <span class="level-start">
-                <span class="level-item">软件资源</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -454,16 +448,16 @@
         
         <article class="media">
             
-            <a href="/2019/03/15/Toast的基本用法/" class="media-left">
+            <a href="/2019/03/21/广播机制/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/toast.png" alt="Toast的基本用法">
+                    <img class="thumbnail" src="/gallery⁩/thumbnails⁩/android_guangbo_thumbnails/guangbo.jpg" alt="Android全局大喇叭-广播机制">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-14T16:00:00.000Z">2019-03-15</time></div>
-                    <a href="/2019/03/15/Toast的基本用法/" class="has-link-black-ter is-size-6">Toast的基本用法</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-20T16:00:00.000Z">2019-03-21</time></div>
+                    <a href="/2019/03/21/广播机制/" class="has-link-black-ter is-size-6">Android全局大喇叭-广播机制</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/移动开发/">移动开发</a>
                     </p>
@@ -473,56 +467,18 @@
         
         <article class="media">
             
-            <a href="/2018/04/14/java/" class="media-left">
+            <a href="/2019/03/15/Toast的基本用法/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/banner.jpg" alt="Java小案例-杨辉三角算法">
+                    <img class="thumbnail" src="/gallery/thumbnails/android_toast_thumbnails/toast.png" alt="Toast的基本用法">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-04-14T08:10:25.000Z">2018-04-14</time></div>
-                    <a href="/2018/04/14/java/" class="has-link-black-ter is-size-6">Java小案例-杨辉三角算法</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-14T16:00:00.000Z">2019-03-15</time></div>
+                    <a href="/2019/03/15/Toast的基本用法/" class="has-link-black-ter is-size-6">Toast的基本用法</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/编程语言/">编程语言</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/03/11/测试文章1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="测试文章1">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-11T15:02:53.000Z">2018-03-11</time></div>
-                    <a href="/2018/03/11/测试文章1/" class="has-link-black-ter is-size-6">测试文章1</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/软件资源/">软件资源</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/28/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-28T00:39:58.000Z">2017-10-28</time></div>
-                    <a href="/2017/10/28/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/移动开发/">移动开发</a>
                     </p>
                 </div>
             </div>
@@ -546,40 +502,7 @@
                     <span class="level-item">三月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/10/">
-                <span class="level-start">
-                    <span class="level-item">十月 2017</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -601,27 +524,6 @@
                     <a class="tags has-addons" href="/tags/Android/">
                         <span class="tag">Android</span>
                         <span class="tag is-grey">2</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java/">
-                        <span class="tag">Java</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/css/">
-                        <span class="tag">css</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/js/">
-                        <span class="tag">js</span>
-                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -650,16 +552,16 @@
         
         <article class="media">
             
-            <a href="/2019/03/15/Toast的基本用法/" class="media-left">
+            <a href="/2019/03/21/广播机制/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/toast.png" alt="Toast的基本用法">
+                    <img class="thumbnail" src="/gallery⁩/thumbnails⁩/android_guangbo_thumbnails/guangbo.jpg" alt="Android全局大喇叭-广播机制">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-14T16:00:00.000Z">2019-03-15</time></div>
-                    <a href="/2019/03/15/Toast的基本用法/" class="has-link-black-ter is-size-6">Toast的基本用法</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-20T16:00:00.000Z">2019-03-21</time></div>
+                    <a href="/2019/03/21/广播机制/" class="has-link-black-ter is-size-6">Android全局大喇叭-广播机制</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/移动开发/">移动开发</a>
                     </p>
@@ -669,56 +571,18 @@
         
         <article class="media">
             
-            <a href="/2018/04/14/java/" class="media-left">
+            <a href="/2019/03/15/Toast的基本用法/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/thumbnails/banner.jpg" alt="Java小案例-杨辉三角算法">
+                    <img class="thumbnail" src="/gallery/thumbnails/android_toast_thumbnails/toast.png" alt="Toast的基本用法">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-04-14T08:10:25.000Z">2018-04-14</time></div>
-                    <a href="/2018/04/14/java/" class="has-link-black-ter is-size-6">Java小案例-杨辉三角算法</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-14T16:00:00.000Z">2019-03-15</time></div>
+                    <a href="/2019/03/15/Toast的基本用法/" class="has-link-black-ter is-size-6">Toast的基本用法</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/编程语言/">编程语言</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/03/11/测试文章1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="测试文章1">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-11T15:02:53.000Z">2018-03-11</time></div>
-                    <a href="/2018/03/11/测试文章1/" class="has-link-black-ter is-size-6">测试文章1</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/软件资源/">软件资源</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/28/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-28T00:39:58.000Z">2017-10-28</time></div>
-                    <a href="/2017/10/28/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/移动开发/">移动开发</a>
                     </p>
                 </div>
             </div>
@@ -742,40 +606,7 @@
                     <span class="level-item">三月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/10/">
-                <span class="level-start">
-                    <span class="level-item">十月 2017</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -800,27 +631,6 @@
                     </a>
                 </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java/">
-                        <span class="tag">Java</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/css/">
-                        <span class="tag">css</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/js/">
-                        <span class="tag">js</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
             </div>
         </div>
     </div>
@@ -838,7 +648,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Java小案例-杨辉三角算法" height="28">
+                    <img src="/images/logo.svg" alt="Android全局大喇叭-广播机制" height="28">
                 
                 </a>
                 <p class="is-size-7">
